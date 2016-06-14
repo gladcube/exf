@@ -1,4 +1,4 @@
-{merge, $_arg, set_$} = require \glad-functions
+{merge, act, $_arg, set_$} = require \glad-functions
 {extend}:module_extender = require \module-extender
 
 module.exports =
