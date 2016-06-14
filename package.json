@@ -1,0 +1,28 @@
+{
+  "name": "exf",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "glad-functions": "0.0.20",
+    "inflection": "^1.10.0",
+    "livescript": "^1.5.0",
+    "module-extender": "0.0.0",
+    "mongodb": "^2.1.18",
+    "prelude-ls": "^1.1.2",
+    "require-dir": "^0.3.0"
+  },
+  "devDependencies": {
+    "colors": "^1.1.2"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-livescript"
+    ]
+  }
+}
