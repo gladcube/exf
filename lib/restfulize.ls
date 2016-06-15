@@ -14,7 +14,7 @@ module.exports = (controller, app)-->
     [
       [\get, path, \index]
       [\get, path_with_id, \show]
-      [\post, path, \create]
+      [\post, path, \persist]
       [\put, path_with_id, \update]
       [\delete, path_with_id, \delete]
     ] |> map apply route

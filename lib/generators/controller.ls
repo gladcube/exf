@@ -5,7 +5,7 @@ json = C let_ _, \json, _
 module.exports = (
   name,
   {
-    find_all, find, create,
+    find_all, find, persist,
     update, delete: delete_
   }:model,
   {path}:options?
@@ -18,8 +18,8 @@ module.exports = (
   show: ({query}:req, res)-->
     err, data <- find query
     json data, res
-  create: ({body}:req, res)-->
-    err, data <- create body
+  persist: ({body}:req, res)-->
+    err, data <- persist body
     json data, res
   update: ({body}:req, res)-->
     err, data <- update body

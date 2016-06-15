@@ -31,7 +31,7 @@ module.exports = (name, host, port, db, {collection_name}:options?)->
     err, db <- get_connection
     collection db
     |> let_ _, \findOne, filter, cb
-  create: (body, cb)->
+  persist: (body, cb)->
     err, db <- get_connection
     let_ (collection db), \insertOne, body,
       args
