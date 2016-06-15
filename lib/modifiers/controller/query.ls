@@ -1,10 +1,10 @@
-{merge, $_pairs} = require \glad-functions
+{merge} = require \glad-functions
+{apply: apply_schema} = require \schemaf
 
 module.exports =
-  set_filter_from_query: (keys, query)-->
+  set_filter_from_query: (schema, query)-->
     query
     |> merge (
-      filter:
-        query
-        |> $_pairs filter (at 0) >> (in keys)
+      filter: apply_schema schema, query
     )
+
