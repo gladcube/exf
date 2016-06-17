@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "glad-functions": "0.0.20",
+    "glad-functions": "0.0.22",
     "inflection": "^1.10.0",
     "livescript": "^1.5.0",
     "module-extender": "0.0.0",
