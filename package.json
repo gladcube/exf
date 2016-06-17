@@ -1,6 +1,6 @@
 {
   "name": "exf",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,8 @@
     "module-extender": "0.0.0",
     "mongodb": "^2.1.18",
     "prelude-ls": "^1.1.2",
-    "require-dir": "^0.3.0"
+    "require-dir": "^0.3.0",
+    "schemaf": "0.0.0"
   },
   "devDependencies": {
     "colors": "^1.1.2"
