@@ -75,7 +75,7 @@ generate = require \../services/app-model-generator.ls
 ```
 
 
-#### Model generator
+#### Model Generator
 
 To define the common model generator may be good.
 ```livescript
