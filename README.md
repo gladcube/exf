@@ -1,14 +1,14 @@
 ## Overview
 
 ### Introduction
-"exf" helps you to code Models and Controllers in Express framework.
+"exf" provides a collection of helper modules that help defining Models and Controllers on Express framework.
 
 "exf" consists of three types of modules. They're "generators", "controllers" and "modifiers".
 
-In addition to this,
+In addition to these, "express" & "restfulize" also provides collection of functional wrapper for basic Express modules.
 
 #### generators
-It generates Model or controller from specific name, base module that like   Model(at controller) or db connection and schema definitions(at Model) , and options.
+It generates Model or controller from specific name, base module that like   Model(at controller) or db connection and schema definitions(at Model), and options.
 
 Even without options, it generates module that has basic methods though, with options, you can extend or modify that.
 
