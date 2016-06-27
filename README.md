@@ -25,7 +25,7 @@ If you need to modify the basic methods, you can use this.
 ### Generator module List
 
 ||Model|Controller|
-|:-|:-|:-|
+|---|---|---|
 |generators|Generates Model from db connection definitions |Generates Controller from specific Model module|
 |extenders|Extends basic methods of generated Model|Extends basic methods of generated Controller|
 |modifiers|Modifies basic methods of generated Model|Modifies basic methods of generated Controller|
