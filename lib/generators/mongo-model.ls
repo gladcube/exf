@@ -41,8 +41,7 @@ module.exports = (name, host, port, db, {collection_name}:options?)->
       >> apply cb
   persist_many: (body, cb)->
     err, db <- get_connection
-    let_ (collection db), \insertMany, body,
-      args >> apply cb == cb
+    let_ (collection db), \insertMany, body, cb
   update: (body, cb)->
     err, db <- get_connection
     let_ (collection db), \updateOne,
