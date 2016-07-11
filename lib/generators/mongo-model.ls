@@ -39,11 +39,10 @@ module.exports = (name, host, port, db, {collection_name}:options?)->
       >> ($_at 1, set \_id, _, body)
       >> ($_at 1, return_ body)
       >> apply cb
-  bulk_insert: (body, cb)->
+  persist_many: (body, cb)->
     err, db <- get_connection
     let_ (collection db), \insertMany, body,
-      args
-      >> apply cb
+      args >> apply cb == cb
   update: (body, cb)->
     err, db <- get_connection
     let_ (collection db), \updateOne,
