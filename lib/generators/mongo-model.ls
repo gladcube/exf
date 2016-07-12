@@ -25,7 +25,7 @@ module.exports = (name, host, port, db, {collection_name}:options?)->
   find_all: ({filter}:options, cb)->
     err, db <- get_connection
     collection db
-    |> let_ _, \find, filter
+    |> let_ _, \find, filter, options
     |> let_ _, \toArray, cb
   find: ({filter}:options, cb)->
     err, db <- get_connection
@@ -57,3 +57,4 @@ module.exports = (name, host, port, db, {collection_name}:options?)->
       args
       >> ($_at 1, return_ body)
       >> apply cb
+

@@ -9,7 +9,7 @@ module.exports = (controller, app)-->
     route = (method, path, action)-->
       controller
       |> $$ [path, get action]
-      |> apply let_ app, method, _, _
+      |> when_ (at 1) >> (?), apply let_ app, method, _, _
   )
     [
       [\get, path, \index]
@@ -18,3 +18,4 @@ module.exports = (controller, app)-->
       [\put, path_with_id, \update]
       [\delete, path_with_id, \delete]
     ] |> map apply route
+
