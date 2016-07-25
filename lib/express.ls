@@ -1,7 +1,7 @@
 {call} = require \glad-functions
 
 module.exports =
-  # ... -> ExpressApp -> Any
+  # ExpressApp -> ...
   listen: call \listen, _, _
   set: call \set, _, _, _
   use: call \use, _, _
@@ -12,7 +12,7 @@ module.exports =
   delete: call \delete, _, _, _
   route: call \route, _, _
 
-  # Any -> ExpressResponse -> Any
+  # ExpressResponse -> ...
   render: call \render, _, _
   end: call \end, _, _
   json: call \json, _, _

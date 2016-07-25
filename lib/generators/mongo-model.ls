@@ -57,4 +57,11 @@ module.exports = (name, host, port, db, {collection_name}:options?)->
       args
       >> ($_at 1, return_ body)
       >> apply cb
+  delete_many: (body, cb)->
+    err, db <- get_connection
+    let_ (collection db), \deleteMany, body,
+      args
+      >> ($_at 1, return_ body)
+      >> apply cb
+
 

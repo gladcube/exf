@@ -7,4 +7,3 @@ module.exports = (name)->
   update: (body, cb)-> do cb
   delete: (body, cb)-> do cb
 
-

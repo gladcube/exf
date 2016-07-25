@@ -32,4 +32,3 @@ module.exports = (
     err, data <- delete_ body
     respond req, res, data, \delete
 
-
