@@ -1,4 +1,4 @@
-{set, lazy, get, let_, args, $_at, return_} = require \glad-functions
+{delete_, set, lazy, get, let_, args, $_at, return_} = require \glad-functions
 {tableize} = require \inflection
 {MongoClient: {connect}} = require \mongodb
 
@@ -25,7 +25,7 @@ module.exports = (name, host, port, db, {collection_name}:options?)->
   find_all: ({filter}:options, cb)->
     err, db <- get_connection
     collection db
-    |> let_ _, \find, filter, options
+    |> let_ _, \find, filter, (options |> act delete_ \filter)
     |> let_ _, \toArray, cb
   find: ({filter}:options, cb)->
     err, db <- get_connection
