@@ -1,4 +1,4 @@
-{merge} = require \glad-functions
+{act, $$, delete_, merge} = require \glad-functions
 {apply: apply_schema} = require \schemaf
 
 module.exports =
@@ -7,4 +7,5 @@ module.exports =
     |> merge (
       filter: apply_schema schema, query
     )
+    |> act $$ (map delete_, (keys schema))
 

@@ -35,9 +35,11 @@ module.exports = (name, host, port, db, {collection_name}:options?)->
     err, db <- get_connection
     let_ (collection db), \insertOne, body,
       args
-      >> ($_at 1, get \insertedId)
-      >> ($_at 1, set \_id, _, body)
-      >> ($_at 1, return_ body)
+      >> ($_at 1,
+        (get \insertedId)
+        >> (set \_id, _, body)
+        >> (return_ body)
+      )
       >> apply cb
   persist_many: (body, cb)->
     err, db <- get_connection
