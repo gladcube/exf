@@ -37,6 +37,7 @@ module.exports = (name, host, port, db, {collection_name}:options?)->
     err, db <- get_connection
     let_ (collection db), \insertOne, body,
       args
+      >> (except (at 1) >> (?), (++ {}))
       >> ($_at 1,
         (get \insertedId)
         >> (set \_id, _, body)
