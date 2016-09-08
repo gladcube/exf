@@ -28,6 +28,11 @@ module.exports = (name, host, port, db, {collection_name}:options?)->
     collection db
     |> let_ _, \find, filter, (options |> act delete_ \filter)
     |> let_ _, \toArray, cb
+  count_all: ({filter}:options, cb)->
+    if &0 |> is-type \Function => cb = options; options = {}
+    err, db <- get_connection
+    collection db
+    |> let_ _, \count, filter, cb
   find: ({filter}:options, cb)->
     if &0 |> is-type \Function => cb = options; options = {}
     err, db <- get_connection
