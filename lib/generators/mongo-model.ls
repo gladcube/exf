@@ -1,13 +1,16 @@
 {delete_, set, lazy, get, let_, args, $_at, return_} = require \glad-functions
 {tableize} = require \inflection
 {MongoClient: {connect}} = require \mongodb
+slave_ok = process.env.SLAVE_OK or \no
+conditions = {}
 
 module.exports = (name, host, port, db, {collection_name}:options?)->
   states =
     connection: null
   set_connection = set \connection, _, states
   connection = lazy get, \connection, states
-  collection = let_ _, \collection, (collection_name ? (name |> tableize))
+  if slave_ok is \yes then conditions <<< {readPreference:'secondaryPreferred'}
+  collection = let_ _, \collection, (collection_name ? (name |> tableize)), conditions
   get_stats = (cb)->
     if connection!? => let_ that, \stats, cb
     else cb!
@@ -17,7 +20,7 @@ module.exports = (name, host, port, db, {collection_name}:options?)->
       set_connection null
       |> lazy console~warn, \ConnectionClosed
     if connection!? then cb null, that; return
-    err, res <- connect "mongodb://#host:#port/#db"
+    err, res <- connect "mongodb://#host:#port/#{db}"
     set_connection res
     |> lazy get_connection, cb
 
